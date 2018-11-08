@@ -6,7 +6,6 @@ module.exports = function isAuthorized (req, res, next) {
 
   try {
     const decryptedSessionStorageToken = TokenService.verify(token)
-
     User
       .findOne({id: decryptedSessionStorageToken.id})
       .exec((error, user) => {

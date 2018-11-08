@@ -5,9 +5,7 @@ module.exports = {
     const user = await User
       .findOne({name})
       .catch(error => res.serverError(error))
-
     if (!user) return res.forbidden()
-
     User
       .isValidPassword(password, user, (error, isValid) => {
         if (error) return res.serverError(error)
