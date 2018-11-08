@@ -19,7 +19,6 @@ module.exports = {
       via: 'user'
     }
   },
-
   beforeCreate: (user, next) => {
     bcrypt.genSalt(10, (error, salt) => {
       if (error) return next(error)
@@ -32,7 +31,6 @@ module.exports = {
       })
     })
   },
-
   isValidPassword: (password, user, callback) => {
     bcrypt.compare(password, user.password, (error, isMatch) => {
       if (error) return callback(error)
