@@ -4,7 +4,6 @@ module.exports = {
       type: 'json',
       required: true
     },
-
     user: {
       model: 'user'
     }

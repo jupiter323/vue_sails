@@ -19,6 +19,7 @@ module.exports = {
       via: 'user'
     }
   },
+  
   beforeCreate: (user, next) => {
     bcrypt.genSalt(10, (error, salt) => {
       if (error) return next(error)
